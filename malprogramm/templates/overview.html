@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Malprogramm</title>
+</head>
+<body>
+    <h1>Malen!</h1>
+
+    <script>
+        const url = {{ url_for('upload')|tojson }};
+        const data = {
+            username: {{ current_user.email|tojson }}
+        }
+        fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        }).then(response => {
+            if (!response.ok) {
+                throw new Exception('Failed to send data');
+            }
+        }).catch(error => {
+            console.error(error.status);
+        });
+    </script>
+</body>
+</html>
