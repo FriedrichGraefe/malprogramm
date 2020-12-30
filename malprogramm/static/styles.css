@@ -7,6 +7,8 @@ body {
     overflow: hidden;
 }
 
+/*-------------Legende---------------*/
+
 #legende {
     position: absolute;
     font-size: 17pt;
@@ -26,3 +28,61 @@ body {
 #legende:hover {
      opacity: 1;
  }
+
+/*-------------Form---------------*/
+
+.form_body{
+    font-family: mic-32-new-rounded-web, sans-serif;
+    height: 100%;
+    width: 100%;
+    padding-top: 200px;
+    background-color: rgb(255, 209, 99);
+}
+
+.form_inner{
+    width: 300px;
+    margin: 0 auto;
+    list-style-type: none;
+}
+
+.form_inner h1{
+    padding-bottom: 30px;
+    text-align: center;
+    font-size: 50px;
+}
+
+.form_fields{
+    text-align: right;
+    margin-right: 35px;
+}
+
+.form_remember_me{
+    margin-left: 50px;
+    margin-top: 10px;
+}
+
+.form_submit{
+    text-align: center;
+    margin-top: 20px;
+
+}
+
+/*-------------Menu---------------*/
+
+#menu{
+    text-align: center;
+    margin-top: 20px;
+}
+
+#menu ul{
+    list-style-type: none;
+}
+
+#menu ul li a{
+    color: black;
+    text-decoration: none;
+}
+
+#menu ul li a:hover{
+    color: rgb(61, 61, 61);
+}
