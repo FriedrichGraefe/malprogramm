@@ -1,4 +1,4 @@
-from flask import render_template, request
+from flask import render_template, request, redirect
 from flask_security import login_required
 from malprogramm import app
 
@@ -11,7 +11,13 @@ def overview():
 
 @app.route('/malen')
 def malen():
-    return render_template('malen.html')
+    if request.method == 'POST':
+        file.save(f'malprogramm/images/Bild1')
+        return redirect('/', code=303)
+
+    else:
+
+     return render_template('malen.html')
 
 
 @app.route('/upload', methods=['POST'])
