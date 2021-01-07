@@ -21,8 +21,9 @@ var bg2 = 200;
 
 
 function setup() {
-    createCanvas(windowWidth, windowHeight);
-    background(bg0, bg1, bg2);
+    let cnv =createCanvas(windowWidth, windowHeight);
+    cnv.id('mycanvas');
+    cnv.background(bg0, bg1, bg2);
 }
 
 function draw() {
