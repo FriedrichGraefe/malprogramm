@@ -3,6 +3,15 @@
 <link rel="stylesheet" href="https://use.typekit.net/nwm8nua.css">
 <link rel="stylesheet" href="static/styles.css">
 
+<button class="nav_menu_button"></button>
+    <nav class="nav_menu">
+        <ul>
+            <li><a class="nav_link" href="http://127.0.0.1:5000/malen">Malen</a></li>
+            <li><a class="nav_link" href="http://127.0.0.1:5000/gallery">Gallerie</a></li>
+            <li><a class="nav_link" href="http://127.0.0.1:5000/login">Login</a></li>
+            <li><a class="nav_link" href="http://127.0.0.1:5000/register">Registrieren</a></li>
+        </ul>
+    </nav>
 <div class="form_body">
     <div class="form_inner">
         <h1>{{ ('Login') }}</h1>
@@ -23,3 +32,4 @@
         {% include "security/_menu.html" %}
     </div>
 </div>
+<script src="/static/nav_menu.js"></script>
