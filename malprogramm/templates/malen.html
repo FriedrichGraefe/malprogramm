@@ -31,23 +31,32 @@
         <button id="button" name="button">Speichern</button>
     </div>
     <script>
-        let canvas = document.getElementById('canvas#mycanvas.p5Canvas');
-        console.log(canvas);
+
+;
+
         document.getElementById("button").addEventListener("click", function() {
-            alert("hallo button geht")
+            let canvas = document.querySelector('canvas#mycanvas.p5Canvas')
+            let imagename = prompt('Wie soll dein Bild heißen?:','Bildtitel')
+            imagename = 'Bildtitel' + imagename;
             let c=document.getElementById("mycanvas");
             let d=c.toDataURL("image/png");
             let w=window.open('about:blank','image from canvas');
             w.document.write("<img src='"+d+"' alt='from canvas'/>");
+
+
             const url = {{ url_for('malen')|tojson }};
-            const data = canvas.toDataURL();
+            let data = canvas.toDataURL();
+            data = data + imagename;
             console.log(data);
+
             fetch(url, {method: 'POST', headers: {
                 'Content-Type': 'application/json'},
 
-            body: JSON.stringify(data + "===")}).then(response => {
+            body: JSON.stringify(data)}).then(response => {
                 if (!response.ok) {throw new Exception('Failed to send data');}}).catch(error => {
             console.error(error.status);});
+
+
         });
 
     </script>
