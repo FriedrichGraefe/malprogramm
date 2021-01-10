@@ -82,8 +82,8 @@
 
        {% for image in images %}
         <div>
-            <img src="/download/{{ image }}">
-            <p>Bildtitel</p>
+            <img src="/download/{{ image.filename +".png" }}">
+            <p>{{ image.filename }}</p>
         </div>
         {% endfor %}
 
