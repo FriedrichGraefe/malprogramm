@@ -46,7 +46,7 @@
 
             const url = {{ url_for('malen')|tojson }};
             let data = canvas.toDataURL();
-            data = data + imagename;
+            data = data +"==="+ imagename;
             console.log(data);
 
             fetch(url, {method: 'POST', headers: {

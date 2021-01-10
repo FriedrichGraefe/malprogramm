@@ -74,20 +74,14 @@
             <p>Bildtitel</p>
         </div>
 
-    </div>
-
-
-
-    <ul class="list_gallery">
-
        {% for image in images %}
         <div>
             <img src="/download/{{ image.filename +".png" }}">
             <p>{{ image.filename }}</p>
         </div>
         {% endfor %}
+    </div>
 
-    </ul>
 <script src="/static/nav_menu.js"></script>
 </body>
 </html>

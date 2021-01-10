@@ -5,6 +5,8 @@ import base64
 from malprogramm.models import Image, User
 
 
+
+
 @app.route('/')
 @login_required
 def overview():
@@ -14,29 +16,27 @@ def overview():
 @app.route('/malen', methods=['POST', 'GET'])
 def malen():
     if request.method == 'POST':
-        imageid = 0
 
-        #Daten kommen hier an und werden in data gespeichert.
+        # Daten kommen hier an und werden in data gespeichert.
         data = request.get_json()
-        #Unnötiger Anfang vom String wird abgeschnitten.
+        # Unnötiger Anfang vom String wird abgeschnitten.
         data = data.split(",", 1)[1]
-        #Der Bildname ist am Ende des Strings und wird separat in imagename gespeichert.
+        # Der Bildname ist am Ende des Strings und wird separat in imagename gespeichert.
         imagename = data.split("Bildtitel", 1)[1]
         print(imagename)
         saveimage = './malprogramm/images/' + imagename + '.png'
         print(data)
 
-        #Hier soll aus der Datenbank Image Tabelle die letzte ID geholt werden.
-        imageid = (Image.query.get(id).last()) + 1
+        # Hier soll aus der Datenbank Image Tabelle die letzte ID geholt werden.
 
-        #Hier fehlt der Befehl um an die angemeldete user_id zu kommen.
+        # Hier fehlt der Befehl um an die angemeldete user_id zu kommen.
 
-        #Hier wird das Bild in der Image Tabelle gespeichert.
-        image = Image(id=imageid, filename=imagename, user_id=1)
+        # Hier wird das Bild in der Image Tabelle gespeichert.
+        image = Image(filename=imagename, user_id=1)
         db.session.add(image)
         db.session.commit()
 
-        #Hier wird das Bild im Ordnerverzeichnis gespeichert
+        # Hier wird das Bild im Ordnerverzeichnis gespeichert
         picture_data = base64.b64decode(data)
         with open(saveimage, 'wb') as f:
             f.write(picture_data)
