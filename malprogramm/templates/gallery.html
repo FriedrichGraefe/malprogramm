@@ -13,71 +13,20 @@
     <nav class="nav_menu">
         <ul>
             <li><a class="nav_link" href="http://127.0.0.1:5000/malen">Malen</a></li>
-            <li><a class="nav_link" href="http://127.0.0.1:5000/gallery">Gallerie</a></li>
+            <li><a class="nav_link" href="http://127.0.0.1:5000/gallery">Galerie</a></li>
             <li><a class="nav_link" href="http://127.0.0.1:5000/login">Login</a></li>
             <li><a class="nav_link" href="http://127.0.0.1:5000/register">Registrieren</a></li>
         </ul>
     </nav>
-    <h1 id="head_gallery">Gallerie</h1>
+    <h1 id="head_gallery">Galerie</h1>
 
     <div class="list_gallery">
-        <div>
-            <img src="/download/myCanvas.jpg">
-            <p>Bildtitel</p>
-        </div>
-        <div>
-            <img src="/download/myCanvas(1).jpg">
-            <p>Bildtitel</p>
-        </div>
-        <div>
-            <img src="/download/myCanvas(2).jpg">
-            <p>Bildtitel</p>
-        </div>
-        <div>
-            <img src="/download/myCanvas(3).jpg">
-            <p>Bildtitel</p>
-        </div>
-        <div>
-            <img src="/download/myCanvas(4).jpg">
-            <p>Bildtitel</p>
-        </div>
-        <div>
-            <img src="/download/myCanvas(5).jpg">
-            <p>Bildtitel</p>
-        </div>
-        <div>
-            <img src="/download/myCanvas (6).jpg">
-            <p>Bildtitel</p>
-        </div>
-        <div>
-            <img src="/download/myCanvas (7).jpg">
-            <p>Bildtitel</p>
-        </div>
-        <div>
-            <img src="/download/myCanvas (8).jpg">
-            <p>Bildtitel</p>
-        </div>
-        <div>
-            <img src="/download/myCanvas (9).jpg">
-            <p>Bildtitel</p>
-        </div>
-        <div>
-            <img src="/download/myCanvas (10).jpg">
-            <p>Bildtitel</p>
-        </div>
-        <div>
-            <img src="/download/myCanvas.jpg">
-            <p>Bildtitel</p>
-        </div>
-        <div>
-            <img src="/download/myCanvas (8).jpg">
-            <p>Bildtitel</p>
-        </div>
-
        {% for image in images %}
         <div>
             <img src="/download/{{ image.filename +".png" }}">
             <p>{{ image.filename }}</p>
+            <p>{{ image.user.email }}</p>
+
         </div>
         {% endfor %}
     </div>

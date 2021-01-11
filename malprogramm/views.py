@@ -40,7 +40,6 @@ def malen():
         return redirect('/', code=303)
 
 
-
     else:
 
         return render_template('malen.html')
