@@ -35,19 +35,26 @@
 ;
 
         document.getElementById("button").addEventListener("click", function() {
+            // canvas Element in dem das Bild gemalt wird
             let canvas = document.querySelector('canvas#mycanvas.p5Canvas')
+            // prompt um den Bildnamen zu übergeben
             let imagename = prompt('Wie soll dein Bild heißen?:','Bildtitel')
-            imagename = 'Bildtitel' + imagename;
+
             let c=document.getElementById("mycanvas");
             let d=c.toDataURL("image/png");
             let w=window.open('about:blank','image from canvas');
             w.document.write("<img src='"+d+"' alt='from canvas'/>");
 
-
+            // url an die, die Daten verschickt werden sollen.
             const url = {{ url_for('malen')|tojson }};
-            let data = canvas.toDataURL();
-            data = data +"==="+ imagename;
-            console.log(data);
+            // Canvas Bildaten werden in canvasdata gespeichert.
+            let canvasdata = canvas.toDataURL();
+            canvasdata = canvasdata +"===";
+            console.log(canvasdata);
+            //in data werden userid cdata und imgname gespeichert.
+            const data = {
+            userid: {{ current_user.id|tojson }}, cdata: canvasdata, imgname: imagename
+            }
 
             fetch(url, {method: 'POST', headers: {
                 'Content-Type': 'application/json'},
@@ -55,8 +62,6 @@
             body: JSON.stringify(data)}).then(response => {
                 if (!response.ok) {throw new Exception('Failed to send data');}}).catch(error => {
             console.error(error.status);});
-
-
         });
 
     </script>
