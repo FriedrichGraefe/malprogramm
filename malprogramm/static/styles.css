@@ -5,7 +5,55 @@
 
 body {
     overflow: hidden;
+    font-family: mic-32-new-rounded-web, sans-serif;
+    background-color: rgb(255, 209, 99);
 }
+
+/*-------------Startseite---------------*/
+
+#startseite_text {
+    text-align: center;
+    padding-top: 30px;
+}
+
+#startseite_text h1{
+    font-weight: bold;
+    font-size: 40px;
+    padding-bottom: 30px;
+}
+
+#startseite_text p{
+    width: 500px;
+    margin: 0 auto;
+}
+
+#startseite_text a{
+    display: inline-block;
+    color: black;
+    text-decoration: none;
+    margin: 30px 5px 0px 5px;
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+#startseite_text a:hover {
+    background-color: lightgray;
+}
+
+#img_startseite {
+    height: 50vh;
+    width: 80vw;
+    margin: 0 auto;
+    margin-top: 50px;
+    border-radius: 30px;
+    background-image: url("/static/hallobild.png");
+    background-position: center;
+    background-size: cover;
+}
+
+
+
 
 /*-------------Legende---------------*/
 
@@ -34,6 +82,23 @@ body {
     visibility: collapse;
     height: 0px;
     position: absolute;
+}
+
+#savebutton{
+    border: none;
+    border-radius: 10px;
+    padding: 5px 10px 5px 10px;
+    margin-top: 10px;
+    font-size: 17pt;
+    font-family: mic-32-new-rounded-web, sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-color: rgb(255,255,255);
+    background-color: white;
+}
+
+#savebutton:hover{
+    background-color: lightgray;
 }
 
 /*-------------Form---------------*/
@@ -97,7 +162,6 @@ body {
 /*-------------Gallerie---------------*/
 
 #body_gallery{
-    font-family: mic-32-new-rounded-web, sans-serif;
     width: 80%;
     margin: 0 auto;
     display: flex;
@@ -105,7 +169,6 @@ body {
     align-items: center;
     flex-direction: column;
     padding-top: 30px;
-    background-color: rgb(255, 209, 99);
     overflow-y: visible;
 }
 
@@ -131,6 +194,7 @@ body {
 .list_gallery div img{
     width: 100%;
     border-radius: 10px;
+    cursor: pointer;
 }
 
 .list_gallery div p{

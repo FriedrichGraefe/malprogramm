@@ -3,34 +3,40 @@
 <head>
     <link rel="stylesheet" href="https://use.typekit.net/nwm8nua.css">
     <link rel="stylesheet" href="static/styles.css">
-
+    <link rel="stylesheet" href="static/lightbox.css">
     <meta charset="UTF-8">
-    <title>Image Gallery</title>
+    <title>Galerie</title>
 </head>
-<body id="body_gallery">
-
+<body>
+    <div id="lightbox_outer" class="hidden">
+        <div id="lightbox">
+        </div>
+    </div>
+    <div id="body_gallery">
     <button class="nav_menu_button"></button>
     <nav class="nav_menu">
         <ul>
-            <li><a class="nav_link" href="http://127.0.0.1:5000/malen">Malen</a></li>
-            <li><a class="nav_link" href="http://127.0.0.1:5000/gallery">Galerie</a></li>
-            <li><a class="nav_link" href="http://127.0.0.1:5000/login">Login</a></li>
-            <li><a class="nav_link" href="http://127.0.0.1:5000/register">Registrieren</a></li>
+            <li><a class="nav_link" href="/">Startseite</a></li>
+            <li><a class="nav_link" href="/malen">Malen</a></li>
+            <li><a class="nav_link" href="/gallery">Galerie</a></li>
+            <li><a class="nav_link" href="/login">Login</a></li>
+            <li><a class="nav_link" href="/register">Registrieren</a></li>
         </ul>
     </nav>
-    <h1 id="head_gallery">Galerie</h1>
+        <h1 id="head_gallery">Galerie</h1>
 
-    <div class="list_gallery">
-       {% for image in images %}
-        <div>
-            <img src="/download/{{ image.filename +".png" }}">
-            <p>{{ image.filename }}</p>
-            <p>{{ image.user.email }}</p>
-
+        <div class="list_gallery">
+            {% for image in images %}
+            <div id="img_gallery">
+                <img id="{{ image.id }}" class="image" src="/download/{{ image.filename +".png" }}" onclick="openLightbox(this.src)">
+                <p>{{ image.filename }}</p>
+                <p>{{ image.user.email }}</p>
+            </div>
+            {% endfor %}
         </div>
-        {% endfor %}
     </div>
 
 <script src="/static/nav_menu.js"></script>
+<script src="/static/lightbox.js"></script>
 </body>
 </html>

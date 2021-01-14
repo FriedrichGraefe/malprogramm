@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="https://use.typekit.net/nwm8nua.css">
     <link rel="stylesheet" href="static/styles.css">
     <meta charset="UTF-8">
-    <title>Malprogramm</title>
+    <title>Malprogramm_Startseite</title>
 </head>
 <body>
     <button class="nav_menu_button"></button>
@@ -27,25 +27,6 @@
         <a href="http://127.0.0.1:5000/register">Registrieren</a>
         <a href="http://127.0.0.1:5000/login">Einloggen</a>
     </div>
-    <script>
-        const url = {{ url_for('upload')|tojson }};
-        const data = {
-            username: {{ current_user.email|tojson }}
-        }
-        fetch(url, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(data)
-        }).then(response => {
-            if (!response.ok) {
-                throw new Exception('Failed to send data');
-            }
-        }).catch(error => {
-            console.error(error.status);
-        });
-    </script>
     <script src="/static/nav_menu.js"></script>
 </body>
 </html>

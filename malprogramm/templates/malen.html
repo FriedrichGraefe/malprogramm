@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Das ist die Startseite</title>
+    <title>Malen</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/p5.js"></script>
     <link rel="stylesheet" href="https://use.typekit.net/nwm8nua.css">
     <link rel="stylesheet" href="static/styles.css">
@@ -11,10 +11,11 @@
     <button class="nav_menu_button"></button>
     <nav class="nav_menu">
         <ul>
-            <li><a class="nav_link" href="http://127.0.0.1:5000/malen">Malen</a></li>
-            <li><a class="nav_link" href="http://127.0.0.1:5000/gallery">Galerie</a></li>
-            <li><a class="nav_link" href="http://127.0.0.1:5000/login">Login</a></li>
-            <li><a class="nav_link" href="http://127.0.0.1:5000/register">Registrieren</a></li>
+            <li><a class="nav_link" href="/">Startseite</a></li>
+            <li><a class="nav_link" href="/malen">Malen</a></li>
+            <li><a class="nav_link" href="/gallery">Galerie</a></li>
+            <li><a class="nav_link" href="/login">Login</a></li>
+            <li><a class="nav_link" href="/register">Registrieren</a></li>
         </ul>
     </nav>
     <canvas id='canvas'>
@@ -28,22 +29,17 @@
         <p>F: KreisFarbe ändern</p>
         <p>C: Kreise löschen</p>
         <p>T: Lokal speichern</p>
-        <button id="button" name="button">Speichern</button>
+        <button id="savebutton" name="button">Speichern</button>
     </div>
     <script>
 
 ;
 
-        document.getElementById("button").addEventListener("click", function() {
+        document.getElementById("savebutton").addEventListener("click", function() {
             // canvas Element in dem das Bild gemalt wird
             let canvas = document.querySelector('canvas#mycanvas.p5Canvas')
             // prompt um den Bildnamen zu übergeben
             let imagename = prompt('Wie soll dein Bild heißen?:','Bildtitel')
-
-            let c=document.getElementById("mycanvas");
-            let d=c.toDataURL("image/png");
-            let w=window.open('about:blank','image from canvas');
-            w.document.write("<img src='"+d+"' alt='from canvas'/>");
 
             // url an die, die Daten verschickt werden sollen.
             const url = {{ url_for('malen')|tojson }};

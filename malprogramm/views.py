@@ -2,16 +2,22 @@ from flask import render_template, request, redirect, send_from_directory
 from flask_security import login_required
 from malprogramm import app, db
 import base64
-from malprogramm.models import Image, User
+from malprogramm.models import Image
 
 
-@app.route('/')
+@app.route('/overview')
 @login_required
 def overview():
     return render_template('overview.html')
 
 
+@app.route('/')
+def startseite():
+    return render_template('startseite.html')
+
+
 @app.route('/malen', methods=['POST', 'GET'])
+@login_required
 def malen():
     if request.method == 'POST':
 
@@ -38,7 +44,6 @@ def malen():
         with open(saveimage, 'wb') as f:
             f.write(picture_data)
         return redirect('/', code=303)
-
 
     else:
 
