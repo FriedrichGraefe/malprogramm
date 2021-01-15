@@ -161,6 +161,10 @@ body {
 
 /*-------------Gallerie---------------*/
 
+#gallery{
+    overflow-y: visible;
+}
+
 #body_gallery{
     width: 80%;
     margin: 0 auto;
@@ -169,7 +173,6 @@ body {
     align-items: center;
     flex-direction: column;
     padding-top: 30px;
-    overflow-y: visible;
 }
 
 #head_gallery{
