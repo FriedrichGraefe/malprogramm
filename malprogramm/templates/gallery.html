@@ -30,7 +30,7 @@
             <div id="img_gallery">
                 <img id="{{ image.id }}" class="image" src="/download/{{ image.filename +".png" }}" onclick="openLightbox(this.src)">
                 <p>{{ image.filename }}</p>
-                <p>{{ image.user.email }}</p>
+                <p>{{ image.user.username }}</p>
             </div>
             {% endfor %}
         </div>

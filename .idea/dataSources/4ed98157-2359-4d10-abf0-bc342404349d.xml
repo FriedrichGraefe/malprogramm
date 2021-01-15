@@ -127,21 +127,30 @@
       <Position>5</Position>
       <DataType>DATETIME|0s</DataType>
     </column>
-    <index id="36" parent="10" name="sqlite_autoindex_user_1">
+    <column id="36" parent="10" name="username">
+      <Position>6</Position>
+      <DataType>VARCHAR(255)|0s</DataType>
+    </column>
+    <index id="37" parent="10" name="sqlite_autoindex_user_1">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>email</ColNames>
       <ColumnCollations></ColumnCollations>
       <Unique>1</Unique>
     </index>
-    <key id="37" parent="10">
+    <index id="38" parent="10" name="user_username_uindex">
+      <ColNames>username</ColNames>
+      <ColumnCollations></ColumnCollations>
+      <Unique>1</Unique>
+    </index>
+    <key id="39" parent="10">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="38" parent="10">
+    <key id="40" parent="10">
       <ColNames>email</ColNames>
       <UnderlyingIndexName>sqlite_autoindex_user_1</UnderlyingIndexName>
     </key>
-    <check id="39" parent="10">
+    <check id="41" parent="10">
       <Predicate>active IN (0, 1)</Predicate>
     </check>
   </database-model>

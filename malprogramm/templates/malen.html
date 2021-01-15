@@ -56,8 +56,12 @@
                 'Content-Type': 'application/json'},
 
             body: JSON.stringify(data)}).then(response => {
-                if (!response.ok) {throw new Exception('Failed to send data');}}).catch(error => {
-            console.error(error.status);});
+                if (!response.ok)
+                {throw new Error('Failed to send data');}
+                else{
+                    window.location.assign({{ url_for('gallery')|tojson }})
+                }}).catch(error => {
+            console.error(error);});
         });
 
     </script>
