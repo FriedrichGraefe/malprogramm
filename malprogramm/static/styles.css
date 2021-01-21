@@ -161,7 +161,15 @@ body {
 
 /*-------------Gallerie---------------*/
 
-#gallery{
+#loading{
+    font-size: 100px;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 40%;
+}
+
+.gallery{
     overflow-y: visible;
 }
 
@@ -172,11 +180,15 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding-top: 30px;
+    padding-bottom: 100px;
 }
 
 #head_gallery{
+    width: 80%;
     font-size: 50px;
+    margin: 0 auto;
+    padding-top: 30px;
+    text-align: center;
 }
 
 .list_gallery{
@@ -213,7 +225,7 @@ body {
     height: 50px;
     right: 20px;
     top: 20px;
-    position: absolute;
+    position: fixed;
     z-index: 1000;
     border: none;
     background-color: transparent;
@@ -226,7 +238,7 @@ body {
     height: 100vw;
     top: 0;
     left: 0;
-    position: absolute;
+    position: fixed;
     overflow: hidden;
     color: rgb(255, 209, 99);
     background-color: rgb(121, 202, 232);
@@ -244,8 +256,8 @@ body {
 }
 
 .nav_menu ul{
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vw;
     list-style: none;
     display: flex;
     flex-flow: column nowrap;
@@ -261,10 +273,10 @@ body {
     color: white;
     padding-bottom: 7px;
     text-decoration: none;
-    font-family: 'Open Sans', sans-serif;
     font-size: 1.2rem;
 }
 
 .nav_menu ul li a:hover, .nav_menu ul li a:focus {
     border-bottom: 2px solid white;
 }
+

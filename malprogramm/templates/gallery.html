@@ -7,12 +7,12 @@
     <meta charset="UTF-8">
     <title>Galerie</title>
 </head>
-<body id="gallery">
+<body id="gallery" class="gallery" onscroll="closeLightbox()">
     <div id="lightbox_outer" class="hidden">
         <div id="lightbox">
         </div>
     </div>
-    <div id="body_gallery">
+
     <button class="nav_menu_button"></button>
     <nav class="nav_menu">
         <ul>
@@ -24,7 +24,10 @@
             <li><a class="nav_link" href="/logout">Logout</a></li>
         </ul>
     </nav>
-        <h1 id="head_gallery">Galerie</h1>
+    <h1 id="head_gallery">Galerie</h1>
+    <p id="loading">...</p>
+    <div id="body_gallery" class="hidden">
+
 
         <div class="list_gallery">
             {% for image in images %}
