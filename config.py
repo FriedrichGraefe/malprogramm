@@ -1,3 +1,5 @@
+#Einstellungen zu Flask-Security
+
 SECRET_KEY = 'sehr-sicher'
 SQLALCHEMY_DATABASE_URI = 'sqlite:///../database.sqlite'
 

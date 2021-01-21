@@ -1,3 +1,5 @@
+//Hier ist die p5.js Malanwendung
+
 //Steuerung:
 //A: Opacity ändern
 //S: Umrisslinie an/aus

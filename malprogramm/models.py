@@ -2,6 +2,8 @@ from flask_security import RoleMixin, UserMixin
 from malprogramm import db
 
 
+# Hier werden die Datenbank Tabellen erstellt
+
 class Image(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     filename = db.Column(db.String, nullable=False)
@@ -10,8 +12,8 @@ class Image(db.Model):
 
 
 roles_users = db.Table('roles_users',
-        db.Column('user_id', db.Integer(), db.ForeignKey('user.id')),
-        db.Column('role_id', db.Integer(), db.ForeignKey('role.id')))
+                       db.Column('user_id', db.Integer(), db.ForeignKey('user.id')),
+                       db.Column('role_id', db.Integer(), db.ForeignKey('role.id')))
 
 
 class Role(db.Model, RoleMixin):

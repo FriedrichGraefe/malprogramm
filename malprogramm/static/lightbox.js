@@ -1,3 +1,5 @@
+// JS Funktionen um die die Bilder der Galerie als Lightboxen darzustellen
+
 let lightbox = document.querySelector("#lightbox_outer"),
     body_gallery = document.querySelector("#body_gallery"),
     loading = document.querySelector("#loading");

@@ -5,12 +5,6 @@ import base64
 from malprogramm.models import Image
 
 
-@app.route('/overview')
-@login_required
-def overview():
-    return render_template('overview.html')
-
-
 @app.route('/')
 def startseite():
     return render_template('startseite.html')
@@ -48,15 +42,6 @@ def malen():
     else:
 
         return render_template('malen.html')
-
-
-@app.route('/upload', methods=['POST'])
-def upload():
-    data = request.get_json()
-    print(data)
-    username = data.get('username')
-    print(username)
-    return '', 204
 
 
 @app.route('/gallery')
